@@ -1,9 +1,14 @@
 .horses{
-  max-height: 5rem;
-  width: min-content;
+  width: auto;
+  transition: margin-left 2.5s linear;
 }
 
 .rotateHorse{
   @extend .horses;
   transform: rotateY(180deg);
+}
+
+.names{
+  font-size: 1rem;
+  padding-left: 0.8rem;
 }

@@ -16,11 +16,11 @@ export const dataApi = createApi({
         { updateCachedData, cacheDataLoaded, cacheEntryRemoved }
       ) {
         console.log(`Making request for the first time in a while`);
-        const socket = io(API_URL);
-
+        let socket;
         try {
           await cacheDataLoaded;
-
+          socket = io(API_URL);
+          console.log('connected');
           socket.on('connect', (connectMessage) => {
             socket.emit('start');
             console.log({ connectMessage });
