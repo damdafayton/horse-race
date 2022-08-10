@@ -16,9 +16,10 @@ export const dataApi = createApi({
         { updateCachedData, cacheDataLoaded, cacheEntryRemoved }
       ) {
         console.log(`Making request for the first time in a while`);
+        const socket = io(API_URL);
+
         try {
           await cacheDataLoaded;
-          const socket = io(API_URL);
 
           socket.on('connect', (connectMessage) => {
             socket.emit('start');
@@ -34,10 +35,10 @@ export const dataApi = createApi({
           console.log({ error });
         }
         await cacheEntryRemoved;
-        console.log(
-          `No component subscribed to the data for the last 60 seconds`
-        );
-        // CLOSE THE SOCKET !
+
+        socket.off();
+
+        console.log(`No component subscribed to the data for a while`);
       },
     }),
   }),

@@ -1,0 +1,9 @@
+.horses{
+  max-height: 5rem;
+  width: min-content;
+}
+
+.rotateHorse{
+  @extend .horses;
+  transform: rotateY(180deg);
+}
