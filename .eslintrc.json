@@ -16,6 +16,8 @@
   "plugins": ["react", "prettier"],
 
   "rules": {
+    "import/prefer-default-export": "off",
+    "no-unused-vars": "off",
     "prettier/prettier": ["error"],
     "comma-dangle": ["error", "only-multiline"],
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
