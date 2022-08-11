@@ -16,11 +16,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header py-2 position-relative mb-3 px-4">
-        <h1 className="fs-5">HORSE RACING</h1>
+        <h1 className="fs-5 my-0 py-0">HORSE RACING</h1>
         <span className="position-absolute end-0 gap-2 ">
           <button
             type="button"
-            className="btn-clean text-white me-3"
+            className="btn-clean text-white me-2"
             onClick={() => dispatch(zoomIn())}
           >
             <ZoomInOutlinedIcon className="h-2rem" />

@@ -5,7 +5,6 @@ import '@testing-library/jest-dom';
 
 import socketIOClient from 'socket.io-client';
 import MockedSocket from 'socket.io-mock';
-import SocketMock from 'socket.io-mock';
 
 import ContextProvider from './__test__/ContextProvider';
 import App from './App';
