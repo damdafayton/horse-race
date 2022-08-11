@@ -21,6 +21,7 @@ describe('Horse Racing App Tests', () => {
   beforeEach(() => {
     socket = new MockedSocket();
     socketIOClient.mockReturnValue(socket);
+    // socketIOClient.io.mockReturnValue(socket);
   });
 
   afterEach(() => {
@@ -45,8 +46,6 @@ describe('Horse Racing App Tests', () => {
     Note that the url should be dummy string 
     for test environment e.g.(const socket = io('', options);)
     */
-
-    // let socket = new MockedSocket();
 
     render(
       <ContextProvider>
