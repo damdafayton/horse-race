@@ -37,7 +37,7 @@ describe('Render tests', () => {
     // await screen.findByRole("navigation");
     await screen.findByRole('heading');
 
-    expect(screen.getByRole('heading')).toHaveTextContent('RestandDate');
+    expect(screen.getByRole('heading')).toHaveTextContent('HORSE RACING');
     // expect(screen.getByRole('button')).toBeDisabled();
   });
 

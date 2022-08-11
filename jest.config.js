@@ -4,6 +4,6 @@ module.exports = {
     'react-redux': require.resolve('react-redux'),
   },
   testEnvironment: 'jest-environment-jsdom-fifteen',
-  testMatch: ['**/__test__/**/*.test.+(ts|tsx|js)', '!**/test_helpers'],
+  testMatch: ['**/*.test.+(ts|tsx|js)', '!**/test_helpers'],
   moduleDirectories: ['node_modules', './src/__test__'],
 };
