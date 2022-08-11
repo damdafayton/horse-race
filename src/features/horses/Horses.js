@@ -66,7 +66,8 @@ export default function Horses() {
       winner = { ...winner, ...horses[lastData.indexOf(winner)] };
 
       dispatch(endTheRace());
-      dispatch(setWinner(winner));
+      // Delay the result for transition to complete
+      setTimeout(() => dispatch(setWinner(winner)), 3000);
       return;
     }
 
@@ -87,7 +88,7 @@ export default function Horses() {
                   maxWidth: `${maxWidth}vw`,
                   // 2 rem extra space left in case vertical scroolbar is visible
                   marginLeft: `${
-                    ((100 - maxWidth) * horse.distance) / MAX_DISTANCE - 2
+                    ((100 - maxWidth) * horse.distance) / MAX_DISTANCE - 3
                   }vw`,
                 }}
                 className={styles[horses[idx].style]}

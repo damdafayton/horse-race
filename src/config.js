@@ -10,7 +10,7 @@ const configuration = {
   API_URL_FOR_SOCKET: process.env.NODE_ENV === 'test' ? '' : URL,
   SOCKET_START_MESSAGE: 'start',
   SOCKET_TICKER_MESSAGE: 'ticker',
-  MAX_DISTANCE: process.env.NODE_ENV === 'production' ? 1000 : 200,
+  MAX_DISTANCE: process.env.NODE_ENV === 'production' ? 1000 : 1000,
 };
 
 export default configuration;
