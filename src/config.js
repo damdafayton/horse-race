@@ -8,7 +8,8 @@ const configuration = {
   API_URL: URL,
   API_ENDPOINT_FOR_REDUX: 'api',
   API_URL_FOR_SOCKET: process.env.NODE_ENV === 'test' ? '' : URL,
-  SOCKET_MESSAGE_FOR_HORSES: 'ticker',
+  SOCKET_START_MESSAGE: 'start',
+  SOCKET_TICKER_MESSAGE: 'ticker',
   MAX_DISTANCE: process.env.NODE_ENV === 'production' ? 1000 : 200,
 };
 

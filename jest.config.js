@@ -5,6 +5,9 @@ module.exports = {
   },
   testEnvironment: 'jest-environment-jsdom-fifteen',
   testMatch: ['**/*.test.+(ts|tsx|js)', '!**/test_helpers'],
-  moduleDirectories: ['node_modules', './src/__test__'],
-  // setupFilesAfterEnv: ['@testing-library/jest-dom'],
+  moduleDirectories: ['node_modules', './src/__test__/'],
+  setupFilesAfterEnv: [
+    '@testing-library/jest-dom',
+    './src/__test__/setupServer.js',
+  ],
 };

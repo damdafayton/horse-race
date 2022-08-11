@@ -5,9 +5,10 @@ import config from '../config';
 
 const {
   API_URL,
-  SOCKET_MESSAGE_FOR_HORSES,
+  SOCKET_TICKER_MESSAGE,
   API_ENDPOINT_FOR_REDUX,
   API_URL_FOR_SOCKET,
+  SOCKET_START_MESSAGE,
 } = config;
 
 export const dataApi = createApi({
@@ -25,13 +26,15 @@ export const dataApi = createApi({
         try {
           await cacheDataLoaded;
           socket = io(API_URL_FOR_SOCKET);
-          console.log('connected');
-          socket.on('connect', (connectMessage) => {
-            socket.emit('start');
-            console.log({ connectMessage });
+          console.log('http server connected');
+          socket.on('connect', () => {
+            // COULDNT TEST HERE!
+            console.log('socket connected');
+            socket.emit(SOCKET_START_MESSAGE);
           });
 
-          socket.on(SOCKET_MESSAGE_FOR_HORSES, (message) => {
+          socket.on(SOCKET_TICKER_MESSAGE, (message) => {
+            console.log('ticker emitted');
             updateCachedData((draft) => {
               draft.push(message);
             });

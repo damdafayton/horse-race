@@ -39,7 +39,7 @@ function App() {
       </main>
       {winner && (
         <>
-          <Confetti width={width - 20} height={height} />
+          <Confetti width={width - 30} height={height} />
           <WinnerModal />
         </>
       )}
