@@ -16,9 +16,9 @@ import config from '../../config';
 const { MAX_DISTANCE } = config;
 
 export default function Horses() {
-  const { data, error } = useRaceDataQuery();
+  const { data } = useRaceDataQuery();
 
-  const { maxWidth, latestRaceData, isRaceEnded, winner } = useSelector(
+  const { maxWidth, latestRaceData, isRaceEnded } = useSelector(
     (state) => state.horses
   );
 
@@ -57,17 +57,16 @@ export default function Horses() {
 
     const lastData = data[data.length - 1];
 
-    let _winner = lastData.filter((horse) => horse.distance >= MAX_DISTANCE);
-    _winner = _winner[0];
+    let [winner] = lastData.filter((horse) => horse.distance >= MAX_DISTANCE);
 
     // If any horse ends the race dont update latest data anymore.
     // So horses will stop.
-    if (_winner) {
+    if (winner) {
       // Add gif and styling data
-      _winner = { ..._winner, ...horses[lastData.indexOf(_winner)] };
+      winner = { ...winner, ...horses[lastData.indexOf(winner)] };
 
       dispatch(endTheRace());
-      dispatch(setWinner(_winner));
+      dispatch(setWinner(winner));
       return;
     }
 
@@ -86,7 +85,7 @@ export default function Horses() {
                 src={horses[idx].gif}
                 style={{
                   maxWidth: `${maxWidth}vw`,
-                  // 3 rem extra space left in case vertical scroolbar is visible
+                  // 2 rem extra space left in case vertical scroolbar is visible
                   marginLeft: `${
                     ((100 - maxWidth) * horse.distance) / MAX_DISTANCE - 2
                   }vw`,

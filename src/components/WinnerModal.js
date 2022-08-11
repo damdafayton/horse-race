@@ -8,10 +8,10 @@ export default function WinnerModal() {
   return (
     winner && (
       <section className={styles.container}>
-        <div className="pt-5">
+        <div className="pt-5 mt-3">
           <h1 className="fs-4 text-center text-primary">WINNER</h1>
           <h1 className="mb-5 mt-2 text-center">{winner.name.toUpperCase()}</h1>
-          <img style={{ maxHeight: '70%' }} src={winner.gif} />
+          <img alt="winner" style={styles.gif} src={winner.gif} />
         </div>
       </section>
     )
