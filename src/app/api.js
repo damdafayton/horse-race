@@ -25,7 +25,9 @@ export const dataApi = createApi({
         let socket;
         try {
           await cacheDataLoaded;
+
           socket = io(API_URL_FOR_SOCKET);
+          console.log({ socket });
           console.log('http server connected');
           socket.on('connect', () => {
             // COULDNT TEST HERE!
