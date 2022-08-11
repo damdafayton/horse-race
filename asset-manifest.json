@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/jun-frontend-test-task/static/css/main.63967e93.chunk.css",
-    "main.js": "/jun-frontend-test-task/static/js/main.89645324.chunk.js",
-    "main.js.map": "/jun-frontend-test-task/static/js/main.89645324.chunk.js.map",
+    "main.css": "/jun-frontend-test-task/static/css/main.4db70317.chunk.css",
+    "main.js": "/jun-frontend-test-task/static/js/main.622b9174.chunk.js",
+    "main.js.map": "/jun-frontend-test-task/static/js/main.622b9174.chunk.js.map",
     "runtime-main.js": "/jun-frontend-test-task/static/js/runtime-main.c533d7d2.js",
     "runtime-main.js.map": "/jun-frontend-test-task/static/js/runtime-main.c533d7d2.js.map",
     "static/js/2.77fdca00.chunk.js": "/jun-frontend-test-task/static/js/2.77fdca00.chunk.js",
     "static/js/2.77fdca00.chunk.js.map": "/jun-frontend-test-task/static/js/2.77fdca00.chunk.js.map",
     "index.html": "/jun-frontend-test-task/index.html",
-    "static/css/main.63967e93.chunk.css.map": "/jun-frontend-test-task/static/css/main.63967e93.chunk.css.map",
+    "static/css/main.4db70317.chunk.css.map": "/jun-frontend-test-task/static/css/main.4db70317.chunk.css.map",
     "static/js/2.77fdca00.chunk.js.LICENSE.txt": "/jun-frontend-test-task/static/js/2.77fdca00.chunk.js.LICENSE.txt",
     "static/media/l1.8ba713ae.gif": "/jun-frontend-test-task/static/media/l1.8ba713ae.gif",
     "static/media/l2.826e2d8e.gif": "/jun-frontend-test-task/static/media/l2.826e2d8e.gif",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.c533d7d2.js",
     "static/js/2.77fdca00.chunk.js",
-    "static/css/main.63967e93.chunk.css",
-    "static/js/main.89645324.chunk.js"
+    "static/css/main.4db70317.chunk.css",
+    "static/js/main.622b9174.chunk.js"
   ]
 }
