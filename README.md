@@ -1,11 +1,11 @@
-# APP
+# Horse Racing APP
 
-> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Backend repo: https://github.com/damdafayton/horse-racing-server
 
 ## Built With
 
 - HTML, CSS, JS
-- Bootstrap, SCSS, React
+- Bootstrap, SCSS, Node, React, Redux
 
 ## Live Demo
 
