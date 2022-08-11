@@ -3,14 +3,19 @@ import { io } from 'socket.io-client';
 
 import config from '../config';
 
-const { API_URL, SOCKET_MESSAGE_FOR_HORSES, REDUX_TRIGGER } = config;
+const {
+  API_URL,
+  SOCKET_MESSAGE_FOR_HORSES,
+  API_ENDPOINT_FOR_REDUX,
+  API_URL_FOR_SOCKET,
+} = config;
 
 export const dataApi = createApi({
   reducerPath: 'dataApi',
   baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
   endpoints: (builder) => ({
     raceData: builder.query({
-      query: () => REDUX_TRIGGER,
+      query: () => API_ENDPOINT_FOR_REDUX,
       async onCacheEntryAdded(
         arg,
         { updateCachedData, cacheDataLoaded, cacheEntryRemoved }
@@ -19,7 +24,7 @@ export const dataApi = createApi({
         let socket;
         try {
           await cacheDataLoaded;
-          socket = io(API_URL);
+          socket = io(API_URL_FOR_SOCKET);
           console.log('connected');
           socket.on('connect', (connectMessage) => {
             socket.emit('start');
