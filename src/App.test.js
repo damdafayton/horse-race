@@ -1,5 +1,7 @@
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
+import React from 'react';
+
+import socketIOClient from 'socket.io-client';
+import MockedSocket from 'socket.io-mock';
 import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
@@ -9,16 +11,21 @@ import config from './config';
 
 const { API_URL } = config;
 
-const server = setupServer(
-  rest.get(API_URL, (req, res, ctx) => res(ctx.json([])))
-);
+jest.mock('socket.io-client');
 
 // console.log(jsonCurrentUserLoggedOut);
 
 describe('Render tests', () => {
-  beforeAll(() => server.listen());
-  afterEach(() => server.resetHandlers());
-  afterAll(() => server.close());
+  let socket;
+
+  beforeEach(() => {
+    socket = new MockedSocket();
+    socketIOClient.mockReturnValue(socket);
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
 
   test('Renders Home', async () => {
     render(

@@ -11,7 +11,7 @@ export default function WinnerModal() {
         <div className="pt-5 mt-3">
           <h1 className="fs-4 text-center text-primary">WINNER</h1>
           <h1 className="mb-5 mt-2 text-center">{winner.name.toUpperCase()}</h1>
-          <img alt="winner" style={styles.gif} src={winner.gif} />
+          <img alt="winner" className={styles.gif} src={winner.gif} />
         </div>
       </section>
     )
