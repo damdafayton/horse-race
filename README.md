@@ -9,7 +9,7 @@ Backend repo: https://github.com/damdafayton/horse-racing-server
 
 ## Live Demo
 
-- [Live Demo Link]()
+- [Live Demo Link](https://damdafayton.github.io/jun-frontend-test-task/)
 
 ## Available Scripts
 
@@ -22,7 +22,7 @@ In the project directory, you can:
 - Enter the commands below
 
 ```
-$ git clone git@github.com:damdafayton/___.git
+$ git clone git@github.com:damdafayton/jun-frontend-test-task.git
 $ npm install
 $ npm start
 ```
