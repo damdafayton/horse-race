@@ -17,6 +17,7 @@ In the project directory, you can:
 
 ### Run the app in the development mode
 
+- Use Node v14.20.0
 - Launch your terminal,
 - `cd` into the directory where you want to clone your project,
 - Enter the commands below
