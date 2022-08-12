@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/jun-frontend-test-task/static/css/main.4db70317.chunk.css",
-    "main.js": "/jun-frontend-test-task/static/js/main.67f84dd2.chunk.js",
-    "main.js.map": "/jun-frontend-test-task/static/js/main.67f84dd2.chunk.js.map",
-    "runtime-main.js": "/jun-frontend-test-task/static/js/runtime-main.c533d7d2.js",
-    "runtime-main.js.map": "/jun-frontend-test-task/static/js/runtime-main.c533d7d2.js.map",
-    "static/js/2.6a459213.chunk.js": "/jun-frontend-test-task/static/js/2.6a459213.chunk.js",
-    "static/js/2.6a459213.chunk.js.map": "/jun-frontend-test-task/static/js/2.6a459213.chunk.js.map",
-    "index.html": "/jun-frontend-test-task/index.html",
-    "static/css/main.4db70317.chunk.css.map": "/jun-frontend-test-task/static/css/main.4db70317.chunk.css.map",
-    "static/js/2.6a459213.chunk.js.LICENSE.txt": "/jun-frontend-test-task/static/js/2.6a459213.chunk.js.LICENSE.txt",
-    "static/media/l1.8ba713ae.gif": "/jun-frontend-test-task/static/media/l1.8ba713ae.gif",
-    "static/media/l2.826e2d8e.gif": "/jun-frontend-test-task/static/media/l2.826e2d8e.gif",
-    "static/media/l_miracle.dfb40033.gif": "/jun-frontend-test-task/static/media/l_miracle.dfb40033.gif",
-    "static/media/r1.662feb6e.gif": "/jun-frontend-test-task/static/media/r1.662feb6e.gif",
-    "static/media/r2.3a353552.gif": "/jun-frontend-test-task/static/media/r2.3a353552.gif",
-    "static/media/r3.7a54ba2a.gif": "/jun-frontend-test-task/static/media/r3.7a54ba2a.gif"
+    "main.css": "/horse-race/static/css/main.4db70317.chunk.css",
+    "main.js": "/horse-race/static/js/main.4e3f89dd.chunk.js",
+    "main.js.map": "/horse-race/static/js/main.4e3f89dd.chunk.js.map",
+    "runtime-main.js": "/horse-race/static/js/runtime-main.c89b2440.js",
+    "runtime-main.js.map": "/horse-race/static/js/runtime-main.c89b2440.js.map",
+    "static/js/2.6a459213.chunk.js": "/horse-race/static/js/2.6a459213.chunk.js",
+    "static/js/2.6a459213.chunk.js.map": "/horse-race/static/js/2.6a459213.chunk.js.map",
+    "index.html": "/horse-race/index.html",
+    "static/css/main.4db70317.chunk.css.map": "/horse-race/static/css/main.4db70317.chunk.css.map",
+    "static/js/2.6a459213.chunk.js.LICENSE.txt": "/horse-race/static/js/2.6a459213.chunk.js.LICENSE.txt",
+    "static/media/l1.8ba713ae.gif": "/horse-race/static/media/l1.8ba713ae.gif",
+    "static/media/l2.826e2d8e.gif": "/horse-race/static/media/l2.826e2d8e.gif",
+    "static/media/l_miracle.dfb40033.gif": "/horse-race/static/media/l_miracle.dfb40033.gif",
+    "static/media/r1.662feb6e.gif": "/horse-race/static/media/r1.662feb6e.gif",
+    "static/media/r2.3a353552.gif": "/horse-race/static/media/r2.3a353552.gif",
+    "static/media/r3.7a54ba2a.gif": "/horse-race/static/media/r3.7a54ba2a.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.c533d7d2.js",
+    "static/js/runtime-main.c89b2440.js",
     "static/js/2.6a459213.chunk.js",
     "static/css/main.4db70317.chunk.css",
-    "static/js/main.67f84dd2.chunk.js"
+    "static/js/main.4e3f89dd.chunk.js"
   ]
 }
