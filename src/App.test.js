@@ -47,7 +47,7 @@ describe('Horse Racing App Tests', () => {
     expect(screen.getByRole('heading')).toHaveTextContent('HORSE RACING');
   });
 
-  it('should dispatch connect event', async () => {
+  it('should dispatch connect event to socket client', async () => {
     /*
     socket should connect in App and 
     Note that the url should be dummy string 
