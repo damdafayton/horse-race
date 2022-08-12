@@ -8,12 +8,5 @@ export const store = configureStore({
     [dataApi.reducerPath]: dataApi.reducer,
     horses: horsesReducer,
   },
-  middleware: (getDefault) =>
-    getDefault({
-      serializableCheck: {
-        // Ignore these action types
-        ignoredActions: ['horses/setSocket'],
-        ignoredPaths: ['horses.socket'],
-      },
-    }).concat(dataApi.middleware),
+  middleware: (getDefault) => getDefault().concat(dataApi.middleware),
 });
