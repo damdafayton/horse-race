@@ -9,7 +9,7 @@ Backend repo: https://github.com/damdafayton/horse-racing-server
 
 ## Live Demo
 
-- [Live Demo Link](https://damdafayton.github.io/jun-frontend-test-task/)
+- [Live Demo Link](https://damdafayton.github.io/horse-race/)
 
 ## Available Scripts
 
