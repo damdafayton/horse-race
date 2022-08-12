@@ -1,6 +1,8 @@
 module.exports = {
   moduleNameMapper: {
-    '\\.(css|scss|gif)$': 'identity-obj-proxy',
+    '\\.(css|scss)$': 'identity-obj-proxy',
+    '\\.(png|jpg|webp|ttf|woff|woff2|svg|mp4|gif)$':
+      '<rootDir>/src/__test__/mock/reactMocks.js',
     'react-redux': require.resolve('react-redux'),
   },
   testEnvironment: 'jest-environment-jsdom-fifteen',

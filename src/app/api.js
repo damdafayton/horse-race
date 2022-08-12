@@ -21,34 +21,36 @@ export const dataApi = createApi({
         arg,
         { updateCachedData, cacheDataLoaded, cacheEntryRemoved }
       ) {
-        console.log(`Making request for the first time in a while`);
+        // I commented but didnt delete console.logs for documentation purpose
+        // console.log(`Making request for the first time in a while`);
+
         let socket;
         try {
           await cacheDataLoaded;
+          // console.log('http server connected');
 
           socket = io(API_URL_FOR_SOCKET);
-          console.log({ socket });
-          console.log('http server connected');
+
           socket.on('connect', () => {
-            // COULDNT TEST HERE!
-            console.log('socket connected');
+            // console.log('socket connected');
             socket.emit(SOCKET_START_MESSAGE);
           });
 
           socket.on(SOCKET_TICKER_MESSAGE, (message) => {
-            console.log('ticker emitted');
+            // console.log('ticker emitted');
+
             updateCachedData((draft) => {
               draft.push(message);
             });
           });
         } catch (error) {
-          console.log({ error });
+          // console.log({ error });
         }
         await cacheEntryRemoved;
 
         socket.off();
 
-        console.log(`No component subscribed to the data for a while`);
+        // console.log(`No component subscribed to the data for a while`);
       },
     }),
   }),

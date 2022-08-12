@@ -49,8 +49,6 @@ export default function Horses() {
   ];
 
   useEffect(() => {
-    console.log({ data });
-
     if (isRaceEnded || !data || !data.length) {
       return;
     }
@@ -77,7 +75,7 @@ export default function Horses() {
   return (
     <section className="mb-3">
       <div className="d-flex flex-column text-start">
-        {latestRaceData &&
+        {latestRaceData ? (
           latestRaceData.map((horse, idx) => (
             <div key={`${horse.name}`}>
               <h2 className={styles.names}>{horse.name}</h2>
@@ -86,7 +84,7 @@ export default function Horses() {
                 src={horses[idx].gif}
                 style={{
                   maxWidth: `${maxWidth}vw`,
-                  // 2 rem extra space left in case vertical scroolbar is visible
+                  // 3 vw space left to not trigger horizontal scroll bar in case vertical scroolbar is visible
                   marginLeft: `${
                     ((100 - maxWidth) * horse.distance) / MAX_DISTANCE - 3
                   }vw`,
@@ -94,7 +92,13 @@ export default function Horses() {
                 className={styles[horses[idx].style]}
               />
             </div>
-          ))}
+          ))
+        ) : (
+          <div className="text-center">
+            It takes 20 to 40 seconds to receive initial data from Heroku
+            server. Please wait..
+          </div>
+        )}
       </div>
     </section>
   );

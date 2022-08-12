@@ -16,15 +16,21 @@ const { SOCKET_START_MESSAGE, SOCKET_TICKER_MESSAGE } = config;
 jest.mock('socket.io-client');
 
 describe('Horse Racing App Tests', () => {
-  let socket; // = new MockedSocket();
+  let socket;
 
-  beforeEach(() => {
+  // MSW .close() doesnt work so I skip this test to be able to test sockets later
+  beforeAll(() => {
     socket = new MockedSocket();
     socketIOClient.mockReturnValue(socket);
-    // socketIOClient.io.mockReturnValue(socket);
+
+    socket.on(SOCKET_START_MESSAGE, function (message) {
+      socket.socketClient.emit(SOCKET_TICKER_MESSAGE, raceData);
+    });
   });
 
-  afterEach(() => {
+  beforeEach(() => {});
+
+  afterAll(() => {
     jest.restoreAllMocks();
   });
 
@@ -58,7 +64,7 @@ describe('Horse Racing App Tests', () => {
     });
   });
 
-  test('should mock the socket', async () => {
+  test('socket.io-mock works', async () => {
     render(
       <ContextProvider>
         <App />
@@ -66,19 +72,14 @@ describe('Horse Racing App Tests', () => {
     );
 
     await waitFor(() => {
-      socket.on(SOCKET_START_MESSAGE, function (message) {
+      socket.on('fake-message', function (message) {
         expect(message).toMatch('started streaming');
       });
-      socket.socketClient.emit(SOCKET_START_MESSAGE, 'started streaming');
+      socket.socketClient.emit('fake-message', 'started streaming');
     });
   });
 
-  /**
-   * I COULDNT TEST THIS
-   * REDUX RTK DOESNT PICK THE CONNECTION FROM SOCKET MOCK
-   */
-
-  test.skip('Renders horses', async () => {
+  test('Renders horses', async () => {
     const { getByText } = render(
       <ContextProvider>
         <App />
@@ -86,21 +87,11 @@ describe('Horse Racing App Tests', () => {
     );
 
     await waitFor(() => {
-      expect(socketIOClient.connect).toHaveBeenCalled();
+      socket.on(SOCKET_TICKER_MESSAGE, function (message) {
+        expect(getByText(raceData[0].name)).toBeInTheDocument();
+      });
+
+      socket.socketClient.emit(SOCKET_START_MESSAGE, 'started streaming');
     });
-
-    // await waitFor(() => {
-    //   socket.on(SOCKET_TICKER_MESSAGE, function (message) {
-    //     expect(socketIOClient.connect).toHaveBeenCalled();
-    //     // screen.queryByText(raceData[0].name);
-
-    //     // expect(screen.getByText(raceData[0].name)).toBeTruthy();
-    //     // expect(screen.getByText(raceData[0].name)).toBeFalsy();
-    //     expect(getByText(raceData[0].name)).toBeInTheDocument();
-    //   });
-    //   socketIOClient.connect;
-    //   socket.socketClient.emit(SOCKET_START_MESSAGE, 'started streaming');
-    //   socket.socketClient.emit(SOCKET_TICKER_MESSAGE, raceData);
-    // });
   });
 });
