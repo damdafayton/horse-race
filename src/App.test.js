@@ -18,7 +18,8 @@ jest.mock('socket.io-client');
 describe('Horse Racing App Tests', () => {
   let socket;
 
-  // MSW .close() doesnt work so I skip this test to be able to test sockets later
+  // MSW .close() doesnt work so I instead resetting server on every test,
+  // I have carries the socket setup to beforeAll
   beforeAll(() => {
     socket = new MockedSocket();
     socketIOClient.mockReturnValue(socket);
