@@ -19,7 +19,7 @@ describe('Horse Racing App Tests', () => {
   let socket;
 
   // MSW .close() doesnt work so I instead resetting server on every test,
-  // I have carries the socket setup to beforeAll
+  // I have carried the socket setup to beforeAll
   beforeAll(() => {
     socket = new MockedSocket();
     socketIOClient.mockReturnValue(socket);
